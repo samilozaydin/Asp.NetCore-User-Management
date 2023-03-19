@@ -1,0 +1,17 @@
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\bin\Debug\net6.0\UserManagement.Infrastructure.deps.json
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\bin\Debug\net6.0\UserManagement.Infrastructure.dll
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\bin\Debug\net6.0\UserManagement.Infrastructure.pdb
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\bin\Debug\net6.0\UserManagement.Application.dll
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\bin\Debug\net6.0\UserManagement.Domain.dll
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\bin\Debug\net6.0\UserManagement.Application.pdb
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\bin\Debug\net6.0\UserManagement.Domain.pdb
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\obj\Debug\net6.0\UserManagement.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\obj\Debug\net6.0\UserManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\obj\Debug\net6.0\UserManagement.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\obj\Debug\net6.0\UserManagement.Infrastructure.AssemblyInfo.cs
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\obj\Debug\net6.0\UserManagement.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\obj\Debug\net6.0\UserManagement.Infrastructure.csproj.CopyComplete
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\obj\Debug\net6.0\UserManagement.Infrastructure.dll
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\obj\Debug\net6.0\refint\UserManagement.Infrastructure.dll
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\obj\Debug\net6.0\UserManagement.Infrastructure.pdb
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Infrastructure\UserManagement.Infrastructure\obj\Debug\net6.0\ref\UserManagement.Infrastructure.dll

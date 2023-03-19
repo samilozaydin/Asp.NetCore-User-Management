@@ -1,0 +1,15 @@
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\bin\Debug\net6.0\UserManagement.Application.deps.json
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\bin\Debug\net6.0\UserManagement.Application.dll
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\bin\Debug\net6.0\UserManagement.Application.pdb
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\bin\Debug\net6.0\UserManagement.Domain.dll
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\bin\Debug\net6.0\UserManagement.Domain.pdb
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\obj\Debug\net6.0\UserManagement.Application.csproj.AssemblyReference.cache
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\obj\Debug\net6.0\UserManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\obj\Debug\net6.0\UserManagement.Application.AssemblyInfoInputs.cache
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\obj\Debug\net6.0\UserManagement.Application.AssemblyInfo.cs
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\obj\Debug\net6.0\UserManagement.Application.csproj.CoreCompileInputs.cache
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\obj\Debug\net6.0\UserManagement.Application.csproj.CopyComplete
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\obj\Debug\net6.0\UserManagement.Application.dll
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\obj\Debug\net6.0\refint\UserManagement.Application.dll
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\obj\Debug\net6.0\UserManagement.Application.pdb
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Core\UserManagement.Application\obj\Debug\net6.0\ref\UserManagement.Application.dll
