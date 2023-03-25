@@ -4,8 +4,9 @@
 @{
 
 }
-@model List<UserManagement.Domain.Entities.Employee>
-
+@{
+    var element = (ViewData["EmployeeVM"] as UserManagement.Presantation.Models.ViiewModels.EmployeeMainVM);
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Management</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/table.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
     <div class="container">
@@ -24,10 +28,10 @@
                          src="../images/trial.jpg"
                          alt="broken" />
                 </div>
-                <p>user name</p>
+                <p>@element.Employee.FirstName @element.Employee.LastName</p>
                 <div class="img-dimension user-options">
                     <img class="img-dimension"
-                         src="../images/trial.jpg"
+                         src="../images/exit.png"
                          alt="broken"
                          onclick="alert()" />
                 </div>
@@ -41,11 +45,11 @@
                         <div class="selected-box"></div>
                         <div class="item-img">
                             <img class="item-img-component"
-                                 src="../images/trial.jpg"
+                                 src="../images/default-avatar.png"
                                  alt="broken" />
                         </div>
                         <div class="item-font">
-                            <p>this is something</p>
+                            <p>Employees</p>
                         </div>
                     </div>
                     <div class="side-menu-item">
@@ -85,49 +89,49 @@
                     <div class="background-and-shadow card">
                         <div class="card-top">
                             <div class="card-info">
-                                <p class="card-info-amount">50</p>
+                                <p class="card-info-amount">@element.SameDepartment</p>
                             </div>
                             <div class="card-imgs">
                                 <img class="card-img"
-                                     src="../images/trial.jpg"
+                                     src="../images/default-avatar.png"
                                      alt="broken" />
                             </div>
                         </div>
 
                         <div class="card-bottom">
-                            <p class="card-info-text">Workers</p>
+                            <p class="card-info-text">Employees on same department</p>
                         </div>
                     </div>
                     <div class="background-and-shadow card">
                         <div class="card-top">
                             <div class="card-info">
-                                <p class="card-info-amount">50</p>
+                                <p class="card-info-amount">@element.DepartmentAmount</p>
                             </div>
                             <div class="card-imgs">
                                 <img class="card-img"
-                                     src="../images/trial.jpg"
+                                     src="../images/department.png"
                                      alt="broken" />
                             </div>
                         </div>
 
                         <div class="card-bottom">
-                            <p class="card-info-text">Workers</p>
+                            <p class="card-info-text">Department amount</p>
                         </div>
                     </div>
                     <div class="background-and-shadow card">
                         <div class="card-top">
                             <div class="card-info">
-                                <p class="card-info-amount">50</p>
+                                <p class="card-info-amount">@element.SameJob</p>
                             </div>
                             <div class="card-imgs">
                                 <img class="card-img"
-                                     src="../images/trial.jpg"
+                                     src="../images/work.png"
                                      alt="broken" />
                             </div>
                         </div>
 
                         <div class="card-bottom">
-                            <p class="card-info-text">Workers</p>
+                            <p class="card-info-text">Employees with same title</p>
                         </div>
                     </div>
                 </div>
@@ -135,7 +139,11 @@
                     <div class="graph-text">
                         <p>Graph</p>
                     </div>
-                    <div class="graph-content"></div>
+                    
+
+                    <div class="graph-content">
+                        <div id="line_top_x"></div>
+                    </div>
                 </div>
             </div>
             <div class="main-right">
@@ -147,17 +155,21 @@
                             <li>Name:</li>
                             <li>Surname:</li>
                             <li>E-mail:</li>
-                            <li>Phone Number:</li>
+                            <li>Phone:</li>
                             <li>Job:</li>
                             <li>Salary:</li>
+                            <li>Department:</li>
                         </ul>
                         <ul class="right">
-                            <li>Name:</li>
-                            <li>Surname:</li>
-                            <li>E-mail:</li>
-                            <li>Phone Number:</li>
-                            <li>Job:</li>
-                            <li>Salary:</li>
+                            <li>
+                                @element.Employee.FirstName 
+                            </li>
+                            <li>@element.Employee.LastName</li>
+                            <li>@element.Employee.Email</li>
+                            <li>@element.Employee.Phone</li>
+                            <li>@element.JobName</li>
+                            <li>@element.Employee.Salary</li>
+                            <li>@element.DepartmentName</li>
                         </ul>
                     </div>
                 </div>
@@ -167,22 +179,169 @@
             <div class="background-and-shadow the-table">
                 <div>
                     <p>Information</p>
-                    <table>
-                        @foreach (var element in Model)
+                    <table id = "personel-table"class = "table table-sm">
+                        
+                        <thead>
+                           <tr>
+                               <td>Employee</td>
+                               <td>Email</td>
+                               <td>Phone</td>
+                               <td>Salary</td>
+                               <td>Manager</td>
+                               <td>Department</td>
+                           </tr>
+                        </thead>
+                        <div class="table-contents">
+                        @foreach (var tableElement in ViewData["EmployeeTableVM"] as List<UserManagement.Presantation.Models.ViiewModels.EmployeeTableVM>)
                         {
                             <tr>
-                                <td>@element.FirstName</td>
-                                <td>@element.Phone</td>
-                                <td>@element.LastName</td>
+                                <td>@tableElement.Employee.FirstName @tableElement.Employee.LastName</td>
+                                <td>@tableElement.Employee.Email</td>
+                                <td>@tableElement.Employee.Phone</td>
+                                <td>@tableElement.Employee.Salary</td>
+                                <td>@tableElement.ManagerName</td>
+                                <td>@tableElement.DepartmentName</td>
                             </tr>
-                        }
+                            }
+                </div>
                     </table>
+                <div class="pagination">
+                    <a href="#" class="prev">Prev</a>
+                    <a href="#" class="page active">1</a>
+                    <a href="#" class="page">2</a>
+                    <a href="#" class="page">3</a>
+                    <a href="#" class="page">4</a>
+                    <a href="#" class="page">5</a>
+                    <a href="#" class="next">Next</a>
+                </div>
                 </div>
                 <div class="table-content"></div>
             </div>
         </div>
     </div>
 </body>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            contentType: "application/json",
+            url: 'CreateGraph',
+            success: function (result) {
+                google.charts.load('current', { 'packages': ['line'] });
+                google.charts.setOnLoadCallback(function () {
+                        drawChart(result);
+                    });
+            }
+        });
+    });
+
+        function drawChart(result) {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Departments Name');
+            data.addColumn('number', 'Employees on the same department');
+            var dataArray = [];
+
+            $.each(result, function (i, obj) {
+                dataArray.push([obj.departmentName, obj.departmentId]);
+                console.log(i);
+                console.log(obj.departmentName);
+            });
+
+            data.addRows(dataArray);
+
+            var options = {
+                
+                width: 750,
+                height: 220,
+                axes: {
+                    x: {
+                        0: { side: 'top' }
+                    }
+                }
+            };
+
+            var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+            chart.draw(data, google.charts.Line.convertOptions(options));
+        }
+    </script>
+    <script>
+    var itemsPerPage = 10;
+    var currentPage = 1;
+    var totalItems = $(".table-contents tr").length;
+    var totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    function showPage(page) {
+        var startIndex = (page - 1) * itemsPerPage;
+        var endIndex = startIndex + itemsPerPage;
+
+        $(".table-contents tr").hide();
+        $(".table-contents tr").slice(startIndex, endIndex).show();
+    }
+
+    function updatePagination() {
+        $(".pagination .page").remove();
+
+        for (var i = 1; i <= totalPages; i++) {
+            var pageLink = $("<a>").addClass("page").attr("href", "#").text(i);
+
+            if (i == currentPage) {
+                pageLink.addClass("active");
+            }
+
+            $(".pagination .next").before(pageLink);
+        }
+
+        if (currentPage == 1) {
+            $(".pagination .prev").addClass("disabled");
+        } else {
+            $(".pagination .prev").removeClass("disabled");
+        }
+
+        if (currentPage == totalPages) {
+            $(".pagination .next").addClass("disabled");
+        } else {
+            $(".pagination .next").removeClass("disabled");
+        }
+    }
+
+    showPage(currentPage);
+    updatePagination();
+
+    $(".pagination").on("click", ".page", function (e) {
+        e.preventDefault();
+        currentPage = parseInt($(this).text());
+        showPage(currentPage);
+        updatePagination();
+    });
+
+    $(".pagination .prev").click(function (e) {
+        e.preventDefault();
+
+        if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
+            updatePagination();
+        }
+    });
+
+    $(".pagination .next").click(function (e) {
+        e.preventDefault();
+
+        if (currentPage < totalPages) {
+            currentPage++;
+            showPage(currentPage);
+            updatePagination();
+        }
+    });
+
+    </script>
 </html>
 
 

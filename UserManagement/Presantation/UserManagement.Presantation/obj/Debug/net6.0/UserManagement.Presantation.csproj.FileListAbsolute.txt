@@ -97,3 +97,4 @@ C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Presa
 C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Presantation\UserManagement.Presantation\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Presantation\UserManagement.Presantation\bin\Debug\net6.0\Mono.TextTemplating.dll
 C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Presantation\UserManagement.Presantation\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Presantation\UserManagement.Presantation\bin\Debug\net6.0\libman.json
