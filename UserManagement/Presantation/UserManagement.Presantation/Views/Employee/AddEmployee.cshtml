@@ -1,0 +1,65 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var DepartmentElements = ViewData["Departments"] as List<SelectListItem>;
+    var JobElements = ViewData["Jobs"] as List<SelectListItem>;
+}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/bulmaStyle.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="Mycontainer">
+        <form asp-controller="Employee" asp-action="AddEmployee" method="post">
+        <div class="field">
+            <p class="control has-icons-left">
+                <input class="input" type="text" placeholder="First name" name="FirstName"/>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control has-icons-left">
+                <input class="input" type="text" placeholder="Last name" name="LastName"/>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control has-icons-left">
+                <input class="input" type="email" placeholder="Email" name="Email" />
+            </p>
+        </div>
+        <div class="field">
+            <p class="control has-icons-left">
+                <input class="input"
+                       type="text"
+                       placeholder="Phone number" name="PhoneNumber"/>
+            </p>
+        </div>
+
+        <div class="field">
+            <p class="control has-icons-left">
+                <input class="input" type="text" placeholder="Salary" name="Salary"/>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control has-icons-left">
+                <input class="input" type="text" placeholder="Commission" name="Commission" />
+            </p>
+        </div>
+        <div class="select" name ="Department">
+            <select name="Department" asp-items="@DepartmentElements">
+            </select>
+        </div>
+        <div class="select" name ="Job">
+            <select name="Job" asp-items="@JobElements">
+            </select>
+        </div>
+        <br />
+        <button class="button" style="margin-top: 0.75rem">Send</button>
+        </form>
+    </div>
+</body>
+</html>

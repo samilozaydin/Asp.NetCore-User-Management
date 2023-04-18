@@ -24,11 +24,16 @@ namespace UserManagement.Persistence.Contexts
         protected override void OnModelCreating (ModelBuilder modelBuilder) 
         {
             modelBuilder.Entity<JobHistory>().HasKey(jobHistory => jobHistory.Id);
-            modelBuilder.Entity<JobHistory>().HasOne(context=> context.Employee ).
+            modelBuilder.Entity<JobHistory>().HasOne(context=> context.Employee).
                 WithMany(context => context.JobHistories).
                 HasForeignKey(key => key.Id).OnDelete(DeleteBehavior.Restrict);
-            
 
+           modelBuilder.Entity<User>().HasKey(user => user.Id);
+           
+           modelBuilder.Entity<Employee>().HasOne(employee => employee.User)
+                .WithOne(user => user.Employee)
+                .HasForeignKey<User>(key=> key.Id);
+            
 
         }
     }

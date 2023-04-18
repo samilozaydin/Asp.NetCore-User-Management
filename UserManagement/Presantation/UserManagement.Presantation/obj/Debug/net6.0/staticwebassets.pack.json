@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\UserManagement.Presantation.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Presantation\\UserManagement.Presantation\\wwwroot\\css\\bulmaStyle.css",
+      "PackagePath": "staticwebassets\\css\\bulmaStyle.css"
+    },
+    {
+      "Id": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Presantation\\UserManagement.Presantation\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Presantation\\UserManagement.Presantation\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -33,6 +41,10 @@
       "PackagePath": "staticwebassets\\images\\department.png"
     },
     {
+      "Id": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Presantation\\UserManagement.Presantation\\wwwroot\\images\\earth.png",
+      "PackagePath": "staticwebassets\\images\\earth.png"
+    },
+    {
       "Id": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Presantation\\UserManagement.Presantation\\wwwroot\\images\\exit.png",
       "PackagePath": "staticwebassets\\images\\exit.png"
     },
@@ -43,6 +55,14 @@
     {
       "Id": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Presantation\\UserManagement.Presantation\\wwwroot\\images\\work.png",
       "PackagePath": "staticwebassets\\images\\work.png"
+    },
+    {
+      "Id": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Presantation\\UserManagement.Presantation\\wwwroot\\js\\apiProcess.js",
+      "PackagePath": "staticwebassets\\js\\apiProcess.js"
+    },
+    {
+      "Id": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Presantation\\UserManagement.Presantation\\wwwroot\\js\\googleChart.js",
+      "PackagePath": "staticwebassets\\js\\googleChart.js"
     },
     {
       "Id": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Presantation\\UserManagement.Presantation\\wwwroot\\js\\site.js",

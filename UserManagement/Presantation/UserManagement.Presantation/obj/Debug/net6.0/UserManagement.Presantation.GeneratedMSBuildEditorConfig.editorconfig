@@ -16,8 +16,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Bilal\Documents\GitHub\Asp.NetCore-User-Management\UserManagement\Presantation\UserManagement.Presantation
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Bilal/Documents/GitHub/Asp.NetCore-User-Management/UserManagement/Presantation/UserManagement.Presantation/Views/Department/Department.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxEZXBhcnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bilal/Documents/GitHub/Asp.NetCore-User-Management/UserManagement/Presantation/UserManagement.Presantation/Views/Employee/AddEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkRW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Bilal/Documents/GitHub/Asp.NetCore-User-Management/UserManagement/Presantation/UserManagement.Presantation/Views/Employee/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bilal/Documents/GitHub/Asp.NetCore-User-Management/UserManagement/Presantation/UserManagement.Presantation/Views/Job/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bilal/Documents/GitHub/Asp.NetCore-User-Management/UserManagement/Presantation/UserManagement.Presantation/Views/Location/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bilal/Documents/GitHub/Asp.NetCore-User-Management/UserManagement/Presantation/UserManagement.Presantation/Views/LogIn/LogIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nSW5cTG9nSW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Bilal/Documents/GitHub/Asp.NetCore-User-Management/UserManagement/Presantation/UserManagement.Presantation/Views/Shared/_ValidationScriptsPartial.cshtml]

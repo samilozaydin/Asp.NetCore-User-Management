@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "5COnmqW7IMHiAf5fm0LsB0lVEy0wxWd2oDNFtHEUTgBk3p9m48T3GZ+9YeDRjZ3F37ANvDK9mC3z3fMjns6hvg==",
+  "dgSpecHash": "aXcmW5WUbjXKEEReZKtTziNAmAkKMsCZIK0ub5Sg3amh6exAJ77q6beM1awyBoMKe3wFWU2Bmh4PMRjE8/KKwA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Presantation\\UserManagement.Presantation\\UserManagement.Presantation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bilal\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Bilal\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Bilal\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Bilal\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.16\\microsoft.aspnetcore.authentication.jwtbearer.6.0.16.nupkg.sha512",
     "C:\\Users\\Bilal\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Bilal\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Bilal\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",

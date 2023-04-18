@@ -219,6 +219,24 @@ namespace UserManagement.Persistence.Migrations
                     b.ToTable("Regions");
                 });
 
+            modelBuilder.Entity("UserManagement.Domain.Entities.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
             modelBuilder.Entity("UserManagement.Domain.Entities.Country", b =>
                 {
                     b.HasOne("UserManagement.Domain.Entities.Region", "Region")
@@ -298,6 +316,17 @@ namespace UserManagement.Persistence.Migrations
                     b.Navigation("Country");
                 });
 
+            modelBuilder.Entity("UserManagement.Domain.Entities.User", b =>
+                {
+                    b.HasOne("UserManagement.Domain.Entities.Employee", "Employee")
+                        .WithOne("User")
+                        .HasForeignKey("UserManagement.Domain.Entities.User", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
             modelBuilder.Entity("UserManagement.Domain.Entities.Country", b =>
                 {
                     b.Navigation("Locations");
@@ -313,6 +342,9 @@ namespace UserManagement.Persistence.Migrations
             modelBuilder.Entity("UserManagement.Domain.Entities.Employee", b =>
                 {
                     b.Navigation("JobHistories");
+
+                    b.Navigation("User")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("UserManagement.Domain.Entities.Job", b =>

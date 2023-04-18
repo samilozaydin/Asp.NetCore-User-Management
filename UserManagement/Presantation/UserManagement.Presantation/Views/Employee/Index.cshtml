@@ -1,11 +1,12 @@
-﻿@*
+﻿@using UserManagement.Presantation.Models.ViewModels.EmployeeVM;
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 
 }
 @{
-    var element = (ViewData["EmployeeVM"] as UserManagement.Presantation.Models.ViiewModels.EmployeeMainVM);
+    var element = (ViewData["EmployeeVM"] as EmployeeMainVM);
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +18,11 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/table.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/googleChart.js"></script>
+    <script src="../js/apiProcess.js"></script>
 
 </head>
 <body>
@@ -36,7 +42,12 @@
                          onclick="alert()" />
                 </div>
             </div>
-            <div class="left-bar"></div>
+            <div class="left-bar">
+                <div class="weather">
+                    <img id="weather-img" src="" alt="broken" />
+                    <div class="APIinfo" style="display: inline"></div>
+                </div>
+            </div>
         </div>
         <div class="container-main">
             <div class="main-left">
@@ -52,36 +63,43 @@
                             <p>Employees</p>
                         </div>
                     </div>
+                    <form asp-controller="Department" asp-action="Department" method="get" onclick="submit()">
                     <div class="side-menu-item">
                         <div class="item-img">
                             <img class="item-img-component"
-                                 src="../images/trial.jpg"
+                                 src="../images/department.png"
                                  alt="broken" />
                         </div>
                         <div class="item-font">
-                            <p>this isg</p>
+                            <p>Departments</p>
                         </div>
                     </div>
+                    </form>
+                    <form asp-controller="Job" asp-action="Index" method="get" onclick="submit()">
                     <div class="side-menu-item">
                         <div class="item-img">
                             <img class="item-img-component"
-                                 src="../images/trial.jpg"
+                                 src="../images/work.png"
                                  alt="broken" />
                         </div>
                         <div class="item-font">
-                            <p>is something</p>
+                            <p>Jobs</p>
                         </div>
                     </div>
+                    </form>
+                    <form asp-controller="Location" asp-action="Index" method="get" onclick="submit()">
+
                     <div class="side-menu-item">
                         <div class="item-img">
                             <img class="item-img-component"
-                                 src="../images/trial.jpg"
+                                 src="../images/earth.png"
                                  alt="broken" />
                         </div>
                         <div class="item-font">
-                            <p>this isSXXng</p>
+                            <p>Locations</p>
                         </div>
                     </div>
+                    </form> 
                 </div>
             </div>
             <div class="main-middle">
@@ -139,7 +157,7 @@
                     <div class="graph-text">
                         <p>Graph</p>
                     </div>
-                    
+
 
                     <div class="graph-content">
                         <div id="line_top_x"></div>
@@ -162,7 +180,7 @@
                         </ul>
                         <ul class="right">
                             <li>
-                                @element.Employee.FirstName 
+                                @element.Employee.FirstName
                             </li>
                             <li>@element.Employee.LastName</li>
                             <li>@element.Employee.Email</li>
@@ -178,23 +196,27 @@
         <div class="container-main-bottom">
             <div class="background-and-shadow the-table">
                 <div>
-                    <p>Information</p>
-                    <table id = "personel-table"class = "table table-sm">
-                        
+                    <p style="display:inline; margin-right: 10px">Information</p>
+                    <form asp-controller="Employee" asp-action="AddEmployee" method="get" style="display:inline">
+                        <button class="button" style="width:80px; height:30px">Add</button>
+                    </form>
+
+                    <table id="personel-table" class="table table-sm">
+
                         <thead>
-                           <tr>
-                               <td>Employee</td>
-                               <td>Email</td>
-                               <td>Phone</td>
-                               <td>Salary</td>
-                               <td>Manager</td>
-                               <td>Department</td>
-                           </tr>
+                            <tr>
+                                <td>Employee</td>
+                                <td>Email</td>
+                                <td>Phone</td>
+                                <td>Salary</td>
+                                <td>Manager</td>
+                                <td>Department</td>
+                            </tr>
                         </thead>
                         <div class="table-contents">
-                        @foreach (var tableElement in ViewData["EmployeeTableVM"] as List<UserManagement.Presantation.Models.ViiewModels.EmployeeTableVM>)
-                        {
-                            <tr>
+                            @foreach (var tableElement in ViewData["EmployeeTableVM"] as List<EmployeeTableVM>)
+                            {
+                            <tr class="item">
                                 <td>@tableElement.Employee.FirstName @tableElement.Employee.LastName</td>
                                 <td>@tableElement.Employee.Email</td>
                                 <td>@tableElement.Employee.Phone</td>
@@ -203,145 +225,94 @@
                                 <td>@tableElement.DepartmentName</td>
                             </tr>
                             }
-                </div>
                     </table>
+                </div>
                 <div class="pagination">
                     <a href="#" class="prev">Prev</a>
-                    <a href="#" class="page active">1</a>
-                    <a href="#" class="page">2</a>
-                    <a href="#" class="page">3</a>
-                    <a href="#" class="page">4</a>
-                    <a href="#" class="page">5</a>
+                    <a href="#" class="page active" data-page="1">1</a>
+                    <a href="#" class="page" data-page="2">2</a>
+                    <a href="#" class="page" data-page="3">3</a>
+                    <a href="#" class="page" data-page="4">4</a>
+                    <a href="#" class="page" data-page="5">5</a>
                     <a href="#" class="next">Next</a>
                 </div>
-                </div>
-                <div class="table-content"></div>
             </div>
+            <!--<div class="table-content"></div>-->
         </div>
     </div>
+    </div>
 </body>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript">
 
-    $(document).ready(function () {
-        $.ajax({
-            type: "GET",
-            dataType: "json",
-            contentType: "application/json",
-            url: 'CreateGraph',
-            success: function (result) {
-                google.charts.load('current', { 'packages': ['line'] });
-                google.charts.setOnLoadCallback(function () {
-                        drawChart(result);
-                    });
-            }
-        });
-    });
+<script>
+    /*  var itemsPerPage = 10;
+      var currentPage = 1;
+      var totalItems = $(".table-contents tr").length;
+      var totalPages = Math.ceil(totalItems / itemsPerPage);
 
-        function drawChart(result) {
+      function showPage(page) {
+          var startIndex = (page - 1) * itemsPerPage;
+          var endIndex = startIndex + itemsPerPage;
 
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Departments Name');
-            data.addColumn('number', 'Employees on the same department');
-            var dataArray = [];
+          $(".table-contents tr").hide();
+          $(".table-contents tr").slice(startIndex, endIndex).show();
+      }
 
-            $.each(result, function (i, obj) {
-                dataArray.push([obj.departmentName, obj.departmentId]);
-                console.log(i);
-                console.log(obj.departmentName);
-            });
+      function updatePagination() {
+          $(".pagination .page").remove();
 
-            data.addRows(dataArray);
+          for (var i = 1; i <= totalPages; i++) {
+              var pageLink = $("<a>").addClass("page").attr("href", "#").text(i);
 
-            var options = {
-                
-                width: 750,
-                height: 220,
-                axes: {
-                    x: {
-                        0: { side: 'top' }
-                    }
-                }
-            };
+              if (i == currentPage) {
+                  pageLink.addClass("active");
+              }
 
-            var chart = new google.charts.Line(document.getElementById('line_top_x'));
+              $(".pagination .next").before(pageLink);
+          }
 
-            chart.draw(data, google.charts.Line.convertOptions(options));
-        }
-    </script>
-    <script>
-    var itemsPerPage = 10;
-    var currentPage = 1;
-    var totalItems = $(".table-contents tr").length;
-    var totalPages = Math.ceil(totalItems / itemsPerPage);
+          if (currentPage == 1) {
+              $(".pagination .prev").addClass("disabled");
+          } else {
+              $(".pagination .prev").removeClass("disabled");
+          }
 
-    function showPage(page) {
-        var startIndex = (page - 1) * itemsPerPage;
-        var endIndex = startIndex + itemsPerPage;
+          if (currentPage == totalPages) {
+              $(".pagination .next").addClass("disabled");
+          } else {
+              $(".pagination .next").removeClass("disabled");
+          }
+      }
 
-        $(".table-contents tr").hide();
-        $(".table-contents tr").slice(startIndex, endIndex).show();
-    }
+      showPage(currentPage);
+      updatePagination();
 
-    function updatePagination() {
-        $(".pagination .page").remove();
+      $(".pagination").on("click", ".page", function (e) {
+          e.preventDefault();
+          currentPage = parseInt($(this).text());
+          showPage(currentPage);
+          updatePagination();
+      });
 
-        for (var i = 1; i <= totalPages; i++) {
-            var pageLink = $("<a>").addClass("page").attr("href", "#").text(i);
+      $(".pagination .prev").click(function (e) {
+          e.preventDefault();
 
-            if (i == currentPage) {
-                pageLink.addClass("active");
-            }
+          if (currentPage > 1) {
+              currentPage--;
+              showPage(currentPage);
+              updatePagination();
+          }
+      });
 
-            $(".pagination .next").before(pageLink);
-        }
+      $(".pagination .next").click(function (e) {
+          e.preventDefault();
 
-        if (currentPage == 1) {
-            $(".pagination .prev").addClass("disabled");
-        } else {
-            $(".pagination .prev").removeClass("disabled");
-        }
+          if (currentPage < totalPages) {
+              currentPage++;
+              showPage(currentPage);
+              updatePagination();
+          }
+      });*/
 
-        if (currentPage == totalPages) {
-            $(".pagination .next").addClass("disabled");
-        } else {
-            $(".pagination .next").removeClass("disabled");
-        }
-    }
-
-    showPage(currentPage);
-    updatePagination();
-
-    $(".pagination").on("click", ".page", function (e) {
-        e.preventDefault();
-        currentPage = parseInt($(this).text());
-        showPage(currentPage);
-        updatePagination();
-    });
-
-    $(".pagination .prev").click(function (e) {
-        e.preventDefault();
-
-        if (currentPage > 1) {
-            currentPage--;
-            showPage(currentPage);
-            updatePagination();
-        }
-    });
-
-    $(".pagination .next").click(function (e) {
-        e.preventDefault();
-
-        if (currentPage < totalPages) {
-            currentPage++;
-            showPage(currentPage);
-            updatePagination();
-        }
-    });
-
-    </script>
+</script>
 </html>
-
 

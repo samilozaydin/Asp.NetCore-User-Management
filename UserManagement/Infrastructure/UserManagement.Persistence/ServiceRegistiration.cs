@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using UserManagement.Persistence;
 using UserManagement.Application.Repositories;
 using UserManagement.Persistence.Repositories;
+using UserManagement.Application.Abstractions.Token;
 
 namespace UserManagement.Persistence
 {
@@ -32,7 +33,6 @@ namespace UserManagement.Persistence
             services.AddScoped<IEmployeeWriteRepository, EmployeeWriteRepository>();
             services.AddScoped<IRegionReadRepository, RegionReadRepository>();
             services.AddScoped<IRegionWriteRepository, RegionWriteRepository>();
-
 
         }
     }

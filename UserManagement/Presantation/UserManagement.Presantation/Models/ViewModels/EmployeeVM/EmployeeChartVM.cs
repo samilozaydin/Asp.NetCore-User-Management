@@ -1,4 +1,4 @@
-﻿namespace UserManagement.Presantation.Models.ViiewModels
+﻿namespace UserManagement.Presantation.Models.ViewModels.EmployeeVM
 {
     public class EmployeeChartVM
     {

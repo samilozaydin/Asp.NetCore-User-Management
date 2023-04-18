@@ -1,0 +1,155 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using UserManagement.Presantation.Models.ViewModels.DepartmentVM;
+@{
+
+}
+@{
+    var currentUser = ViewData["Employee"] as UserManagement.Domain.Entities.Employee;
+    var element = (ViewData["DepartmentVM"] as DepartmentTableVM);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/table.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/googleChart.js"></script>
+    <script src="../js/apiProcess.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="right-bar">
+                <div class="img-dimension user-photo">
+                    <img class="img-dimension"
+                         src="../images/trial.jpg"
+                         alt="broken" />
+                </div>
+                <p>@currentUser.FirstName @currentUser.LastName</p>
+                <div class="img-dimension user-options">
+                    <img class="img-dimension"
+                         src="../images/exit.png"
+                         alt="broken"
+                         onclick="alert()" />
+                </div>
+            </div>
+            <div class="left-bar">
+                <div class="weather">
+                    <img id="weather-img" src="" alt="broken" />
+                    <div class="APIinfo" style="display: inline"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-main">
+            <div class="main-left">
+                <div class="side-menu">
+                    <form asp-controller="Employee" asp-action="Graphical" method="get" onclick="submit()">
+                    <div class="side-menu-item">
+                        <div class="item-img">
+                            <img class="item-img-component"
+                                 src="../images/default-avatar.png"
+                                 alt="broken" />
+                        </div>
+                        <div class="item-font">
+                            <p>Employees</p>
+                        </div>
+                    </div>
+                    </form>
+                    <div class="background-and-shadow side-menu-item-selected">
+                        <div class="selected-box"></div>
+                        <div class="item-img">
+                            <img class="item-img-component"
+                                 src="../images/department.png"
+                                 alt="broken" />
+                        </div>
+                        <div class="item-font">
+                            <p>Departments</p>
+                        </div>
+                    </div>
+                    <form asp-controller="Job" asp-action="Index" method="get" onclick="submit()">
+
+                    <div class="side-menu-item">
+                        <div class="item-img">
+                            <img class="item-img-component"
+                                 src="../images/work.png"
+                                 alt="broken" />
+                        </div>
+                        <div class="item-font">
+                            <p>Jobs</p>
+                        </div>
+                    </div>
+                    </form>
+
+                    <form asp-controller="Location" asp-action="Index" method="get" onclick="submit()">
+
+                        <div class="side-menu-item">
+                            <div class="item-img">
+                                <img class="item-img-component"
+                                     src="../images/earth.png"
+                                     alt="broken" />
+                            </div>
+                            <div class="item-font">
+                                <p>Locations</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="container-main-bottom" style="margin-left: 0px">
+                <div class="background-and-shadow the-table">
+                    <div>
+                        <p>Information</p>
+                        <table id="personel-table" class="table table-sm">
+
+                            <thead>
+                                <tr>
+                                    <td>Department Name</td>
+                                    <td>Manager Name</td>
+                                    <td>Region</td>
+                                    <td>Country</td>
+                                    <td>City</td>
+                                </tr>
+                            </thead>
+                            <div class="table-contents">
+                                @foreach (var tableElement in ViewData["DepartmentVM"] as List<DepartmentTableVM>)
+                                {
+                                <tr class="item">
+                                    <td>@tableElement.Department</td>
+                                    <td>@tableElement.Manager</td>
+                                    <td>@tableElement.Region</td>
+                                    <td>@tableElement.Country</td>
+                                    <td>@tableElement.City</td>
+                                </tr>
+                                }
+                                
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <a href="#" class="prev">Prev</a>
+                        <a href="#" class="page active" data-page="1">1</a>
+                        <a href="#" class="page" data-page="2">2</a>
+                        <a href="#" class="page" data-page="3">3</a>
+                        <a href="#" class="page" data-page="4">4</a>
+                        <a href="#" class="page" data-page="5">5</a>
+                        <a href="#" class="next">Next</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    </div>
+</body>
+
+</html>
+

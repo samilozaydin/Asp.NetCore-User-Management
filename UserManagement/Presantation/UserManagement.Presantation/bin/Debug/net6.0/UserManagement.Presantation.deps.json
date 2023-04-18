@@ -8,8 +8,10 @@
     ".NETCoreApp,Version=v6.0": {
       "UserManagement.Presantation/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.16",
           "Microsoft.EntityFrameworkCore.Design": "7.0.4",
           "UserManagement.Application": "1.0.0",
+          "UserManagement.Infrastructure": "1.0.0",
           "UserManagement.Persistence": "1.0.0"
         },
         "runtime": {
@@ -55,6 +57,17 @@
           "lib/net6.0/Humanizer.dll": {
             "assemblyVersion": "2.14.0.0",
             "fileVersion": "2.14.1.48190"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.16": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.21.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "assemblyVersion": "6.0.16.0",
+            "fileVersion": "6.0.1623.17406"
           }
         }
       },
@@ -770,6 +783,7 @@
       },
       "UserManagement.Application/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.16",
           "Microsoft.EntityFrameworkCore": "7.0.4",
           "UserManagement.Domain": "1.0.0"
         },
@@ -780,6 +794,16 @@
       "UserManagement.Domain/1.0.0": {
         "runtime": {
           "UserManagement.Domain.dll": {}
+        }
+      },
+      "UserManagement.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.16",
+          "Microsoft.Extensions.Configuration": "7.0.0",
+          "UserManagement.Application": "1.0.0"
+        },
+        "runtime": {
+          "UserManagement.Infrastructure.dll": {}
         }
       },
       "UserManagement.Persistence/1.0.0": {
@@ -822,6 +846,13 @@
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.16": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-T4AkjPXOYDqDnfb8PRRHNbB2ozLg9J7CsRZ+jH1MfQGshkFosdwja9c4+QVbKm+1qeLPxul+3weSz+DEvFkA5w==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.16",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.6.0.16.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",
@@ -1319,6 +1350,11 @@
       "sha512": ""
     },
     "UserManagement.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UserManagement.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

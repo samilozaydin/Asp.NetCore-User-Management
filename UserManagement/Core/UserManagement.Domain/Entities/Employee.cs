@@ -20,6 +20,7 @@ namespace UserManagement.Domain.Entities
         public int ManagerId { get; set; }
         public int DepartmentId { get; set; }
 
+        public User User { get; set; }
         public Department Departments { get; set; }
         public Job Job { get; set; }
         public ICollection<JobHistory> JobHistories { get; set; }

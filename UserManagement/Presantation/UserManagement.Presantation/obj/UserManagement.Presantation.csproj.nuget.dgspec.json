@@ -44,6 +44,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.4, )"
@@ -104,6 +108,75 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Infrastructure\\UserManagement.Infrastructure\\UserManagement.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Infrastructure\\UserManagement.Infrastructure\\UserManagement.Infrastructure.csproj",
+        "projectName": "UserManagement.Infrastructure",
+        "projectPath": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Infrastructure\\UserManagement.Infrastructure\\UserManagement.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Bilal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Infrastructure\\UserManagement.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Bilal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Core\\UserManagement.Application\\UserManagement.Application.csproj": {
+                "projectPath": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Core\\UserManagement.Application\\UserManagement.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -240,6 +313,9 @@
               "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Core\\UserManagement.Application\\UserManagement.Application.csproj": {
                 "projectPath": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Core\\UserManagement.Application\\UserManagement.Application.csproj"
               },
+              "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Infrastructure\\UserManagement.Infrastructure\\UserManagement.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Infrastructure\\UserManagement.Infrastructure\\UserManagement.Infrastructure.csproj"
+              },
               "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Infrastructure\\UserManagement.Persistence\\UserManagement.Persistence.csproj": {
                 "projectPath": "C:\\Users\\Bilal\\Documents\\GitHub\\Asp.NetCore-User-Management\\UserManagement\\Infrastructure\\UserManagement.Persistence\\UserManagement.Persistence.csproj"
               }
@@ -256,6 +332,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
